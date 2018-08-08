@@ -21,9 +21,9 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //自定义项目内目录
-        //registry.addResourceHandler("/my/**").addResourceLocations("classpath:/my/");
+        registry.addResourceHandler("/my/**").addResourceLocations("classpath:/my/");
         //指向外部目录
-        registry.addResourceHandler("/my/**").addResourceLocations("file:E:/my/");
+//        registry.addResourceHandler("/my/**").addResourceLocations("file:E:/my/");
         super.addResourceHandlers(registry);
     }
 
@@ -47,7 +47,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/toLogin","/login");
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/toLogin","/login","/learn");
         super.addInterceptors(registry);
     }
 }

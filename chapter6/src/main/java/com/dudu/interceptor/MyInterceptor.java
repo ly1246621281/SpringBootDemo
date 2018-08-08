@@ -12,9 +12,9 @@ import java.lang.reflect.Method;
 /**
  * Created by tengj on 2017/3/29.
  */
-public class MyInterceptor implements HandlerInterceptor {
-    @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+public  class MyInterceptor implements HandlerInterceptor {
+     @Override
+   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         boolean flag =true;
         String ip = request.getRemoteAddr();
         long startTime = System.currentTimeMillis();
